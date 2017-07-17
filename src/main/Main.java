@@ -18,13 +18,20 @@ public class Main {
 		beginnerTasks.runTasks();
 		
 		System.out.println("----- END OF BEGINNER TASKS -----");
-		
-		System.out.println("----- START OF INTERMEDIATE TASKS -----");
+
+		System.out.println("\n\n----- START OF INTERMEDIATE TASKS -----");
 		
 		IntermediateTasks intermediateTasks = new IntermediateTasks();
 		intermediateTasks.runTasks();
 		
 		System.out.println("----- END OF INTERMEDIATE TASKS -----");
+		
+		System.out.println("\n\n----- START OF OOP TASKS -----");
+		
+		ObjectOrientedTasks oopTasks = new ObjectOrientedTasks();
+		oopTasks.runTasks();
+		
+		System.out.println("----- END OF OOP TASKS -----");
 	}
 
 }

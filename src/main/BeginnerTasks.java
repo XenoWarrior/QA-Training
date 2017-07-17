@@ -103,9 +103,8 @@ public class BeginnerTasks {
 		}
 
 		// Do the calculations
-		int returnValue = add ? a + b : a * b;
 		// System.out.println(returnValue);
-		return returnValue;
+		return add ? a + b : a * b;
 	}
 
 	/**
@@ -138,11 +137,8 @@ public class BeginnerTasks {
 
 		Random randomNumberGenerator = new Random();
 		for (int i = 0; i < 10; i++) {
-			int randomNum = randomNumberGenerator.nextInt((9 - 0) + 1);
-
-			a[i] = randomNum;
-
-			System.out.println("i = " + i + " number is: " + randomNum);
+			a[i] = randomNumberGenerator.nextInt((9 - 0) + 1);
+			System.out.println("i = " + i + " number is: " + a[i]);
 		}
 
 		return a;
