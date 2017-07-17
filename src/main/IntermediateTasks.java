@@ -18,11 +18,14 @@ public class IntermediateTasks {
 		System.out.println("Sum is: " + uniqueSum(3, 3, 3)); // 0
 		System.out.println("Sum is: " + uniqueSum(1, 1, 2)); // 2
 
-		System.out.println("isSummer is False and the temp is 70, should be True: " + inRange(70, false)); // True
-		System.out.println("isSummer is False and the temp is 91, should be False: " + inRange(91, false)); // False
+		System.out.println("Not summer, range is 60 to 90. Temp is 70, result should be true: " + inRange(70, false)); // True
+		System.out.println("Not summer, range is 60 to 90. Temp is 91, result should be false: " + inRange(91, false)); // False
+
+		System.out.println("Is summer, range is 60 to 100. Temp is 70, result should be true: " + inRange(70, true)); // False
+		System.out.println("Is summer, range is 60 to 100. Temp is 91, result should be true: " + inRange(91, true)); // True
 		
-		System.out.println("isSummer is True and the temp is 70, should be False: " + inRange(70, true)); // False
-		System.out.println("isSummer is True and the temp is 91, should be True: " + inRange(91, true)); // True
+		System.out.println("Is summer, range is 60 to 100. Temp is 59, result should be false: " + inRange(59, true)); // False
+		System.out.println("Is summer, range is 60 to 100. Temp is 101, result should be false: " + inRange(101, true)); // True
 	}
 
 	/**
@@ -82,20 +85,30 @@ public class IntermediateTasks {
 		return total;
 	}
 
+	/**
+	 * Checks if a temperature is between a range based on if it is summer or not summer.
+	 * Not summer: 60 ~ 90
+	 * Summer: 60 ~ 100
+	 * @param temp
+	 * @param isSummer
+	 * @return
+	 */
 	private boolean inRange(int temp, boolean isSummer) {
 
-		if (isSummer) {
-			if (temp > 90 && temp < 100) {
+		if(isSummer) {
+			if (temp > 60 && temp < 100) {
 				return true;
 			}
 			
 			return false;
-		} else {
+		}
+		else {
 			if (temp > 60 && temp < 90) {
 				return true;
 			}
 			
 			return false;
 		}
+		
 	}
 }
