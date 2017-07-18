@@ -30,4 +30,8 @@ public class Paint {
 		return this.paintPrice;
 	}
 	
+	public String stringify() {
+		 return "[Paint Name: " + this.paintName + ", Coverage (per-litre): " + this.paintCoverage + ", Litres: " + this.paintQuantity + ", Price: " + Double.toString(this.paintPrice) + "]";
+	}
+	
 }

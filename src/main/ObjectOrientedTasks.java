@@ -1,8 +1,8 @@
 package main;
 
-import garage.*;
-
 import java.util.ArrayList;
+import garage.*;
+import paint.*;
 
 public class ObjectOrientedTasks {
 	public void runTasks() {
@@ -34,7 +34,12 @@ public class ObjectOrientedTasks {
 		vehicleGarage.addVehicle(new Car(4, 80, "Blue"));
 		vehicleGarage.addVehicle(new Motorcycle(2, 100, "Green"));
 		vehicleGarage.addVehicle(new Hovercraft(0, 300, "White"));
-		vehicleGarage.printInventory();
+		try {
+			vehicleGarage.printInventory();
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
 
 		System.out.println("\nTask 16 (Garage) B: result (should be a printed price for each type of vehicle): ");
 		Vehicle tempV = null;
@@ -67,12 +72,22 @@ public class ObjectOrientedTasks {
 		vehicleGarage.addVehicle(new Hovercraft(0, 300, "White"));
 		vehicleGarage.addVehicle(new Hovercraft(0, 300, "White"));
 		vehicleGarage.addVehicle(new Car(4, 80, "Blue"));
-		vehicleGarage.printInventory();
+		try {
+			vehicleGarage.printInventory();
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
 
 		// Delete all from the garage.
 		System.out.println("\nTask 16 (Garage) D: test (removes all instances and should not show any results): ");
 		vehicleGarage.emptyGarage();
-		vehicleGarage.printInventory();
+		try {
+			vehicleGarage.printInventory();
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
 
 		// Add vehicles
 		System.out.println("\nTask 16 (Garage) E: result (should print a new inventory of vehicles): ");
@@ -84,16 +99,39 @@ public class ObjectOrientedTasks {
 		vehicleGarage.addVehicle(new Hovercraft(0, 300, "White"));
 		vehicleGarage.addVehicle(new Hovercraft(0, 300, "White"));
 		vehicleGarage.addVehicle(new Car(4, 80, "Blue"));
-		vehicleGarage.printInventory();
+		try {
+			vehicleGarage.printInventory();
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
 
 		System.out.println("\nTask 16 (Garage) E: test (should delete all instances of 'Car'): ");
 		vehicleGarage.delVehicle("Car");
 
 		System.out.println("\nTask 16 (Garage) F: test (should print the inventory, excluding all 'Car' instances): ");
-		vehicleGarage.printInventory();
 		
-		System.out.println("\nTask 17 (Paint Wizard)");
+		try {
+			vehicleGarage.printInventory();
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		int roomSize = 190;
+		System.out.println("\nTask 17 (Paint Wizard), results (should show a list of paints followed by the best value based on least waste): ");
+		System.out.println("Room size is: " + roomSize + " M²");
 		
+		paint.PaintWizard paintWizard = new paint.PaintWizard();
+		paintWizard.listPaints();
+		
+		try {
+			System.out.println(">>> Paint Wizard picked: " + paintWizard.wastesLeast(roomSize).stringify());
+			System.out.println(">>> Paint Wizard picked: " + paintWizard.bestPrice().stringify());
+		}
+		catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 		
 		System.out.println("----- END OF OOP TASKS -----");
 	}
