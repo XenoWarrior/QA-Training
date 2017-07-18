@@ -2,11 +2,12 @@ package garage;
 
 public class Motorcycle extends Vehicle {
 
-	public Motorcycle() {
+	public Motorcycle(int w, int s, String c) {
 		System.out.println("Motorcycle.");
-		
-		super.vehicleWheels = 2;
-		super.vehicleSpeed= 100;
+
+		super.vehicleWheels = w;
+		super.vehicleSpeed = s;
+		super.vehicleColour = c;
 	}
 
 }

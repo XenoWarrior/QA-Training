@@ -9,57 +9,58 @@ public class BeginnerTasks {
 	 */
 	public void runTasks() {
 
+		System.out.println("----- START OF BEGINNER TASKS -----");
+		
 		// Task: Hello World!
-		System.out.println("1) Hello world!");
+		System.out.println("Task 1 (Hello World!), print Hello world! directly.");
 
 		// Task: Assignment.
-		String helloWorld = "2) Hello world!";
+		String helloWorld = "\nTask 2 (Assignment), print Hello world! by assignment to variable.";
 		System.out.println(helloWorld);
 
 		// Task: Parameters.
-		helloWorld("3) Hello world!");
+		helloWorld("\nTask 3 (Parameters), print Hello world! via method and parameter.");
 
 		// Task: Return Types.
-		System.out.println(helloWorldReturn() + "\n\n");
+		System.out.println(helloWorldReturn());
 
 		// Task: Parameters/Operators.
 		// Included tasks: Conditionals, Conditionals 2 and Iteration.
-		System.out.println("5) Add: 2 + 3 = " + doCalculation(2, 3, true));
-		System.out.println("6) Multiply: 3 * 3 = " + doCalculation(3, 3, false) + "\n\n");
+		System.out.println("\nTask 5 (Parameters/Operators), add two values via method and parameter: Add 2 + 3 = " + doCalculation(2, 3, true));
+		System.out.println("\nTask 6 (Conditionals), include boolean to decide if a calculation is ADD or MULTIPLY: Multiply: 3 * 3 = " + doCalculation(3, 3, false));
 
-		System.out.println("7) Should be 1: " + doCalculation(1, 0, false));
-		System.out.println("8) Should be 3: " + doCalculation(1, 2, true));
+		System.out.println("Task 7 (Conditionals 2), result (should be 1): " + doCalculation(1, 0, false));
+		System.out.println("Task 7 (Conditionals 2), result (should be 3): " + doCalculation(1, 2, true));
 
-		System.out.println("9) Test, should be 3: " + doCalculation(3, 0, false));
-		System.out.println("10) Test, should be 5: " + doCalculation(0, 5, false) + "\n\n");
+		System.out.println("Task 7 (Conditionals 2), result (should be 3): " + doCalculation(3, 0, false));
+		System.out.println("Task 7 (Conditionals 2), result (should be 5): " + doCalculation(0, 5, false));
 
 		// Task: Arrays.
 		int numberArray[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
 
-		System.out.println(
-				"11) Task: Arrays (index 0 and 4), result: " + doCalculation(numberArray[0], numberArray[4], true));
-		System.out.println(
-				"11) Task: Arrays (index 2 and 5), result: " + doCalculation(numberArray[2], numberArray[5], true));
-		System.out.println(
-				"11) Task: Arrays (index 7 and 3), result: " + doCalculation(numberArray[7], numberArray[3], true));
-		System.out.println("11) Task: Arrays (index 1 and 9, is zero), result (should be 2): "
-				+ doCalculation(numberArray[1], numberArray[9], true));
+		System.out.println("\nTask 9 (Arrays), (index 0 and 4), result (should be: 6): " + doCalculation(numberArray[0], numberArray[4], true));
+		System.out.println("Task 9 (Arrays), (index 2 and 5), result (should be: 9): " + doCalculation(numberArray[2], numberArray[5], true));
+		System.out.println("Task 9 (Arrays), (index 7 and 3), result (should be: 12): " + doCalculation(numberArray[7], numberArray[3], true));
+		System.out.println("Task 9 (Arrays), (index 1 and 9), result (should be: 2): " + doCalculation(numberArray[1], numberArray[9], true));
 
 		// Task: Iteration/Arrays
-		System.out.print("12) Printing array: ");
+		System.out.print("\nTask 10 (Iteration/Arrays), result (should be array of numbers): ");
 		printArray(numberArray);
 
 		// Task: Iteration/Arrays 2
-		System.out.println("13) Generating a random number array and printing values: ");
+		System.out.print("\nTask 11 (Iteration/Arrays), result (should be randomly generated array): ");
 		int[] newArray = new int[10];
 		newArray = populateArray();
+		printArray(newArray);
 
-		System.out.println("14) Now lets multiply each result by 10!: ");
+		System.out.print("Task 11 (Iteration/Arrays), result (should be the array above, multiplied by 10 each time): ");
 		for (int i = 0; i < newArray.length; i++) {
-			int item = newArray[i];
 			newArray[i] *= 10;
-			System.out.println(item + " * 10 = " + newArray[i]);
 		}
+		printArray(newArray);
+		
+		System.out.println("----- END OF BEGINNER TASKS -----");
+		
 	}
 
 	/**
@@ -79,7 +80,7 @@ public class BeginnerTasks {
 	 * @return returns "4) Hello world".
 	 */
 	private static String helloWorldReturn() {
-		return "4) Hello world!";
+		return "\nTask 4 (Return Types), print Hello world! via method return value.";
 	}
 
 	/**
@@ -111,10 +112,12 @@ public class BeginnerTasks {
 	 * Does the iteration task
 	 */
 	private static void doIteration(int value) {
+		System.out.println("\n------------------------------------");
 		// Task: Iteration
 		for (int i = 0; i < 10; i++) {
-			System.out.println("Iteration Task: " + value);
+			System.out.println("Task 8 (Iteration), Result: " + value);
 		}
+		System.out.println("------------------------------------");
 	}
 
 	/**
@@ -138,7 +141,7 @@ public class BeginnerTasks {
 		Random randomNumberGenerator = new Random();
 		for (int i = 0; i < 10; i++) {
 			a[i] = randomNumberGenerator.nextInt((9 - 0) + 1);
-			System.out.println("i = " + i + " number is: " + a[i]);
+			//System.out.println("i = " + i + " number is: " + a[i]);
 		}
 
 		return a;

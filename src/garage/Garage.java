@@ -1,7 +1,7 @@
 package garage;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 public class Garage {
 
@@ -36,14 +36,14 @@ public class Garage {
 	 * Deleted vehicle by it's ID.
 	 * 
 	 * @param id
-	 *            int number for the vehicle ID.
+	 *            Number for the vehicle ID.
 	 */
 	public void delVehicle(int id) {
 		if (vehicleList.containsKey(id)) {
 			System.out.println("Removing Vehicle by ID: " + vehicleList.get(id).stringify());
 			vehicleList.remove(id);
 		} else {
-			System.out.println("Vehicle does not exist. ID: " + id);
+			System.out.println("Vehicle does not exist in garage. ID: " + id);
 		}
 	}
 
@@ -58,7 +58,28 @@ public class Garage {
 			System.out.println("Removing Vehicle by instance: " + v.stringify());
 			vehicleList.values().remove(v);
 		} else {
-			System.out.println("Vehicle does not exist in Garage List. Instance: " + v.stringify());
+			System.out.println("Vehicle does not exist in garage. Instance: " + v.stringify());
+		}
+	}
+
+	/**
+	 * Deletes all vehicle by type.
+	 */
+	public void delVehicle(String type) {
+		
+		ArrayList<Vehicle> temp = new ArrayList<Vehicle>();
+		
+		for (Vehicle v : vehicleList.values()) {
+			if (v.getClass().getName().equals("garage." + type)) {
+				//System.out.println("Deleted: " + v.stringify() + ", is part of the '" + type + "' class.");
+				temp.add(v);
+			} else {
+				System.out.println("Did NOT delete: " + v.stringify() + ", is not part of the '" + type + "' class.");
+			}
+		}
+		
+		for(Vehicle v : temp) {
+			delVehicle(v);
 		}
 	}
 
@@ -73,7 +94,7 @@ public class Garage {
 		if (v.getClass() == Car.class) {
 			return 40;
 		}
-		if (v.getClass() == Truck.class) {
+		if (v.getClass() == Hovercraft.class) {
 			return 100;
 		}
 

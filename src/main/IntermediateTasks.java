@@ -2,7 +2,6 @@ package main;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
 
 public class IntermediateTasks {
 
@@ -10,24 +9,27 @@ public class IntermediateTasks {
 	 * Runs the tasks from the intermediate section
 	 */
 	public void runTasks() {
-		System.out.println(pickClosest(18, 21)); // 21
-		System.out.println(pickClosest(20, 18)); // 20
-		System.out.println(pickClosest(22, 22)); // 0
 
-		System.out.println(pickClosest(20, 21)); // 21
-		System.out.println(pickClosest(20, 20)); // 20
+		System.out.println("\n\n----- START OF INTERMEDIATE TASKS -----");
 		
+		System.out.println("Task 12 (Blackjack), result (should be 21): " + pickClosest(18, 21)); // 21
+		System.out.println("Task 12 (Blackjack), result (should be 20): " + pickClosest(20, 18)); // 20
+		System.out.println("Task 12 (Blackjack), result (should be 0): " + pickClosest(22, 22)); // 0
+		System.out.println("Task 12 (Blackjack), result (should be 21): " + pickClosest(20, 21)); // 21
+		System.out.println("Task 12 (Blackjack), result (should be 20): " + pickClosest(20, 20)); // 20
 
-		System.out.println("Sum is: " + uniqueSum(1, 2, 3)); // 6
-		System.out.println("Sum is: " + uniqueSum(3, 3, 3)); // 0
-		System.out.println("Sum is: " + uniqueSum(1, 1, 2)); // 2
+		System.out.println("\nTask 13 (Unique Sum), result (should be 6): " + uniqueSum(1, 2, 3)); // 6
+		System.out.println("Task 13 (Unique Sum), result (should be 0): " + uniqueSum(3, 3, 3)); // 0
+		System.out.println("Task 13 (Unique Sum), result (should be 2): " + uniqueSum(1, 1, 2)); // 2
 
-		System.out.println("Not summer, range is 60 to 90. Temp is 70, result should be true: " + inRange(70, false)); // True
-		System.out.println("Not summer, range is 60 to 90. Temp is 91, result should be false: " + inRange(91, false)); // False
-		System.out.println("Is summer, range is 60 to 100. Temp is 70, result should be true: " + inRange(70, true)); // False
-		System.out.println("Is summer, range is 60 to 100. Temp is 91, result should be true: " + inRange(91, true)); // True
-		System.out.println("Is summer, range is 60 to 100. Temp is 59, result should be false: " + inRange(59, true)); // False
-		System.out.println("Is summer, range is 60 to 100. Temp is 101, result should be false: " + inRange(101, true)); // True
+		System.out.println("\nTask 14 (Summer), result (should be true): " + inRange(70, false)); // True
+		System.out.println("Task 14 (Summer), result (should be false): " + inRange(91, false)); // False
+		System.out.println("Task 14 (Summer), result (should be false): " + inRange(70, true)); // False
+		System.out.println("Task 14 (Summer), result (should be true): " + inRange(91, true)); // True
+		System.out.println("Task 14 (Summer), result (should be false): " + inRange(59, true)); // False
+		System.out.println("Task 14 (Summer), result (should be true): " + inRange(101, true)); // True
+		
+		System.out.println("----- END OF INTERMEDIATE TASKS -----");
 
 	}
 
@@ -65,7 +67,7 @@ public class IntermediateTasks {
 		numberList.add(b);
 		numberList.add(c);
 
-		System.out.print("Original List: " + numberList);
+		System.out.print("Task 13 (Unique Sum), original list: " + numberList);
 
 		int aOccurences = Collections.frequency(numberList, a);
 		int bOccurences = Collections.frequency(numberList, b);
@@ -80,7 +82,7 @@ public class IntermediateTasks {
 		if (cOccurences > 1) {
 			numberList.remove((Object) c);
 		}
-		System.out.println(", Removed Duplicates: " + numberList);
+		System.out.println(", removed duplicates: " + numberList);
 
 		int total = 0;
 		for (int i = 0; i < numberList.size(); i++) {
@@ -96,7 +98,7 @@ public class IntermediateTasks {
 	 * 
 	 * @param temp
 	 * @param isSummer
-	 * @return
+	 * @return boolean based on the parameters
 	 */
 	private boolean inRange(int temp, boolean isSummer) {
 

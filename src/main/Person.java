@@ -11,8 +11,8 @@ public class Person {
 		personAge = age;
 		personJob = job;
 	}
-
-	public String getPersonString() {
+	
+	public String stringify() {
 		return "Name/Age: " + personName + ", " + personAge + ". Job: " + personJob;
 	}
 
