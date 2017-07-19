@@ -2,7 +2,6 @@ package main;
 
 import java.util.ArrayList;
 import garage.*;
-import paint.*;
 
 public class ObjectOrientedTasks {
 	public void runTasks() {
