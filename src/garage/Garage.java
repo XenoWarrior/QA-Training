@@ -48,7 +48,7 @@ public class Garage {
 			return true;
 		}
 		
-		//System.out.println("Vehicle does not exist in garage. ID: " + id);
+		System.out.println("Vehicle does not exist in garage. ID: " + id);
 		return false;
 	}
 
@@ -65,7 +65,7 @@ public class Garage {
 			
 			return true;
 		}
-		//System.out.println("Vehicle does not exist in garage. Instance: " + v.stringify());
+		System.out.println("Vehicle does not exist in garage. Instance: " + v.stringify());
 		return false;
 	}
 
@@ -81,7 +81,7 @@ public class Garage {
 				// System.out.println("Deleted: " + v.stringify() + ", is part of the '" + type + "' class.");
 				temp.add(v);
 			} else {
-				//System.out.println("Did NOT delete: " + v.stringify() + ", is not part of the '" + type + "' class.");
+				System.out.println("Did NOT delete: " + v.stringify() + ", is not part of the '" + type + "' class.");
 				
 				return false;
 			}
