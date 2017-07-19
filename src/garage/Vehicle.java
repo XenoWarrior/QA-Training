@@ -8,7 +8,7 @@ public abstract class Vehicle {
 	protected int vehicleId = 0;
 
 	public Vehicle() {
-		System.out.print("Instance Vehicle is: ");
+		//System.out.print("Instance Vehicle is: ");
 	}
 
 	public String stringify() {

@@ -37,6 +37,13 @@ public class Main {
 		TestGarage g = new TestGarage();
 		g.test();
 		System.out.println("--------------------------------------------");
+		System.out.println(">>>> Success!\n\n");
+
+		System.out.println("Running unit test for PaintWizard:");
+		System.out.print("--------------------------------------------\nConsole Output (if any):\n");
+		TestPaint w = new TestPaint();
+		w.test();
+		System.out.println("--------------------------------------------");
 		System.out.println(">>>> Success!");
 
 		System.out.println("\n\n----- ALL TESTS PASSED! -----");

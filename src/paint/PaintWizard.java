@@ -7,9 +7,9 @@ public class PaintWizard {
 	ArrayList<Paint> paintList = new ArrayList<Paint>();
 	
 	public PaintWizard() {
-		paintList.add(new Paint("CheapoMax", 20, 10, 19.123456789012345678));
+		paintList.add(new Paint("CheapoMax", 20, 10, 19.99));
 		paintList.add(new Paint("AverageJoes", 15, 11, 17.99));
-		paintList.add(new Paint("DuluxourousPaints", 10, 20, 25));
+		paintList.add(new Paint("DuluxourousPaints", 10, 20, 25.00));
 	}
 	
 	/**
@@ -44,21 +44,18 @@ public class PaintWizard {
 				leastWastedPaint = wastedPaint;
 				bestPaint = p;
 			}
-			else {
-				if(wastedPaint < leastWastedPaint) {
-					//System.out.println("[DEBUG]: " + p.stringify() + " is better than " + bestPaint.stringify() + " because it wastes less paint, changing.");
-					System.out.println("[PaintWizard]: Found a better solution: " + p.getName() + " which wastes " + wastedPaint + "L in comparison to " + bestPaint.getName() + " which wastes " + leastWastedPaint + "L");
-					
-					leastWastedPaint = wastedPaint;
-					bestPaint = p;
-				}
+			else if(wastedPaint < leastWastedPaint) {
+				//System.out.println("[DEBUG]: " + p.stringify() + " is better than " + bestPaint.stringify() + " because it wastes less paint, changing.");
+				System.out.println("[PaintWizard]: Found a better solution: " + p.getName() + " which wastes " + wastedPaint + "L in comparison to " + bestPaint.getName() + " which wastes " + leastWastedPaint + "L");
+				
+				leastWastedPaint = wastedPaint;
+				bestPaint = p;
 			}
 		}
 		
 		if(bestPaint == null) { 
 			throw new Exception("No paint was found, unable to return a good paint solution.");
 		}
-		
 		
 		return bestPaint;
 	}
@@ -94,10 +91,8 @@ public class PaintWizard {
 				}
 				else {
 					System.out.println("[PaintWizard]: " + p.getName() + " which costs £" + p.getPrice() + " in comparison to " + bestPaint.getName() + " which costs £" + bestPrice + ", ignoring.");
-					continue;
 				}
 			}
-			
 		}
 
 		if(bestPaint == null) { 
