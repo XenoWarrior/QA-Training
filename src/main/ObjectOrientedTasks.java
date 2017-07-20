@@ -367,5 +367,8 @@ public class ObjectOrientedTasks {
 			System.out.println("[DEBUG]: " + e.getMessage());
 		}
 
+		LibraryIO.WriteObjectJSON(l.getItemList(), "Library_ItemList.json");
+		LibraryIO.WriteObjectJSON(l.getPersonList(), "Library_PeopleList.json");
+		
 	}
 }

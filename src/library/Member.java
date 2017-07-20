@@ -91,4 +91,9 @@ public class Member implements Person {
 		return this.rentedList;
 	}
 	
+	@Override
+	public String toString() {
+		return "{\"id\": \"" + this.personId + "\", \"Name\": \"" + this.personName + "\", \"Age\": \"" + this.personAge + "\", \"Address\": \"" + this.personAddress + "\"}";
+	}
+	
 }

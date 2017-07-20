@@ -27,4 +27,8 @@ public class Magazine extends Item {
 		return this.magazineCategory;
 	}
 	
+	@Override
+	public String toString() {
+		return "Name: " + this.itemName + ", Pages: " + this.itemPages + ", Available: " + this.itemAvailable + ", Category: " + this.magazineCategory;
+	}
 }

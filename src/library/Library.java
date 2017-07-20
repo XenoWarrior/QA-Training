@@ -1,5 +1,7 @@
 package library;
 
+import java.util.HashMap;
+
 public class Library {
 
 	/**
@@ -169,5 +171,21 @@ public class Library {
 	 */
 	public Item getItem(int id) throws Exception {
 		return itemManager.getItem(id);
+	}
+
+	/**
+	 * Gets the list of all items in the library
+	 * @return, HashMap containing a list of items
+	 */
+	public HashMap<Integer, Item> getItemList() {
+		return itemManager.getItemList();
+	}
+	
+	/**
+	 * Gets a list of all people in the library records
+	 * @return, HashMap containing a list of people
+	 */
+	public HashMap<Integer, Person> getPersonList() {
+		return personManager.getPersonList();
 	}
 }

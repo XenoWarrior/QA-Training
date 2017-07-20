@@ -100,4 +100,9 @@ public class Staff implements Person {
 	public String getStaffTitle() {
 		return this.jobTitle; 
 	}
+	
+	@Override
+	public String toString() {
+		return "ID: " + this.personId + ", Name: " + this.personName + ", Age: " + this.personAge + ", Address: " + this.personAddress + ", JobTitle: " + this.jobTitle;
+	}
 }

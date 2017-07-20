@@ -24,5 +24,6 @@ public abstract interface Person {
 	public ArrayList<Integer> getItems();
 	public boolean addItem(int itemId);
 	public boolean removeItem(int itemId);
+	public String toString();
 	
 }

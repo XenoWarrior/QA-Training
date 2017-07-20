@@ -31,4 +31,9 @@ public class Newspaper extends Item {
 		return dateFormat.format(releaseDate);
 	}
 	
+	@Override
+	public String toString() {
+		return "Name: " + this.itemName + ", Pages: " + this.itemPages + ", Available: " + this.itemAvailable + ", ReleaseDate: " + this.releaseDate;
+	}
+	
 }

@@ -26,4 +26,9 @@ public class Book extends Item {
 	public boolean isHardback() { 
 		return this.hardBack;
 	}
+	
+	@Override
+	public String toString() {
+		return "Name: " + this.itemName + ", Pages: " + this.itemPages + ", Available: " + this.itemAvailable + ", Hardback: " + this.hardBack;
+	}
 }
