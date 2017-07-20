@@ -10,7 +10,7 @@ public class TestGarage {
 
 	@Test
 	public void test() {
-
+		
 		Garage g = new Garage();
 		
 		// Test add

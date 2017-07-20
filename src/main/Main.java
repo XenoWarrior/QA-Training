@@ -1,5 +1,6 @@
 package main;
 
+import library.Library;
 import tests.*;
 
 /**
@@ -47,6 +48,22 @@ public class Main {
 		System.out.println(">>>> Success!");
 
 		System.out.println("\n\n----- ALL TESTS PASSED! -----");
+		
+
+		System.out.println("\n\n----- START LIBRARY SYSTEM -----\n");
+		
+		Library l = new Library();
+
+		l.checkoutItem(-1, 0);
+		l.checkoutItem(0, -1);
+		
+		l.checkoutItem(0, 0);
+		l.checkoutItem(0, 0);
+
+		l.checkinItem(0, 0);
+		l.checkinItem(0, 0);
+		
+		System.out.println("\n----- END LIBRARY SYSTEM -----");
 		
 	}
 
