@@ -14,9 +14,16 @@ public class Staff implements Person {
 	private String jobTitle = "";
 	
 	private ArrayList<Integer> rentedList = new ArrayList<Integer>();
-	
-	public Staff(int personId, String personName, int personAge, String personAddress, String jobTitle) { 
-		this.personId = personId;
+
+	/**
+	 * Constructor
+	 * @param personName, the name for the new person
+	 * @param personAge, the age for the new person
+	 * @param personAddress, the address for the new person
+	 * @param jobTitle, the job title for the new person
+	 */
+	public Staff(String personName, int personAge, String personAddress, String jobTitle) { 
+		this.personId = Data.getNewPersonId();
 		this.personName = personName;
 		this.personAge = personAge;
 		this.personAddress = personAddress;

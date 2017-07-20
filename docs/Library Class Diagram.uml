@@ -1221,31 +1221,21 @@
 <XPD:REF name="Views[2]">bShIu3BSbUCrazTZo/ovrgAA</XPD:REF>
 <XPD:REF name="Views[3]">jjV4iZqx2kSr8CbiFPi4sQAA</XPD:REF>
 <XPD:ATTR name="#Operations" type="integer">5</XPD:ATTR>
-<XPD:OBJ name="Operations[0]" type="UMLOperation" guid="jdK1HD9Hjkma3yY/mKS/mgAA">
-<XPD:ATTR name="Name" type="string">getPersonList</XPD:ATTR>
-<XPD:REF name="Owner">/ft7JmcNLUCJBQ4H/n4MfQAA</XPD:REF>
-<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="QyWdhJYfoUWEumzw1X8a0gAA">
-<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">HashMap</XPD:ATTR>
-<XPD:REF name="BehavioralFeature">jdK1HD9Hjkma3yY/mKS/mgAA</XPD:REF>
-</XPD:OBJ>
-</XPD:OBJ>
-<XPD:OBJ name="Operations[1]" type="UMLOperation" guid="XHnJ+OwNZk+/sgBg5jeQYgAA">
-<XPD:ATTR name="Name" type="string">registerPerson</XPD:ATTR>
+<XPD:OBJ name="Operations[0]" type="UMLOperation" guid="XHnJ+OwNZk+/sgBg5jeQYgAA">
+<XPD:ATTR name="Name" type="string">addPerson</XPD:ATTR>
 <XPD:REF name="Owner">/ft7JmcNLUCJBQ4H/n4MfQAA</XPD:REF>
 <XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="AOGg6iy+F0ePlMzrsmAr5gAA">
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="vwFWbOd3pUqC20HzzdEPuQAA">
 <XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">XHnJ+OwNZk+/sgBg5jeQYgAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="EPd2lavqg0ihuFyAfMgCZgAA">
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="AXeuw8yCmE22N289LkMQMwAA">
 <XPD:ATTR name="Name" type="string">Person</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">XHnJ+OwNZk+/sgBg5jeQYgAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
-<XPD:OBJ name="Operations[2]" type="UMLOperation" guid="uPL7q56W/UOJD5EBQDTUEQAA">
+<XPD:OBJ name="Operations[1]" type="UMLOperation" guid="uPL7q56W/UOJD5EBQDTUEQAA">
 <XPD:ATTR name="Name" type="string">getPerson</XPD:ATTR>
 <XPD:REF name="Owner">/ft7JmcNLUCJBQ4H/n4MfQAA</XPD:REF>
 <XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
@@ -1257,6 +1247,16 @@
 <XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="hnnsvGAAQk2qe93yyc4fkwAA">
 <XPD:ATTR name="Name" type="string">int</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">uPL7q56W/UOJD5EBQDTUEQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[2]" type="UMLOperation" guid="jdK1HD9Hjkma3yY/mKS/mgAA">
+<XPD:ATTR name="Name" type="string">getPersonList</XPD:ATTR>
+<XPD:REF name="Owner">/ft7JmcNLUCJBQ4H/n4MfQAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="QyWdhJYfoUWEumzw1X8a0gAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">HashMap</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">jdK1HD9Hjkma3yY/mKS/mgAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="Operations[3]" type="UMLOperation" guid="3R4WtXh4f0+AKSeUVG27ggAA">

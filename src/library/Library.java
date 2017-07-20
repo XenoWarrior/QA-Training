@@ -1,7 +1,5 @@
 package library;
 
-import java.text.SimpleDateFormat;
-
 public class Library {
 
 	/**
@@ -14,20 +12,7 @@ public class Library {
 	 * Constructor stub.
 	 */
 	public Library() { 
-		itemManager.addItem(new Book(Data.getNewItemId(), "Somebook 1", 11, true, true));
-		itemManager.addItem(new Book(Data.getNewItemId(), "Somebook 2", 12, true, false));
-
-		itemManager.addItem(new Magazine(Data.getNewItemId(), "SomeMagazine 1", 15, true, "Gossip"));
-		itemManager.addItem(new Magazine(Data.getNewItemId(), "SomeMagazine 2", 16, true, "Cooking"));
 		
-		itemManager.addItem(new Newspaper(Data.getNewItemId(), "SomeMagazine 1", 15, true, new SimpleDateFormat("yyyy/MM/dd HH:mm:ss")));
-		itemManager.addItem(new Newspaper(Data.getNewItemId(), "SomeMagazine 2", 16, true, new SimpleDateFormat("yyyy/MM/dd HH:mm:ss")));
-		
-		personManager.registerPerson(new Member(Data.getNewPersonId(), "Someone 1", 20, "10 Some Street, Some City, Some Country"));
-		personManager.registerPerson(new Member(Data.getNewPersonId(), "Someone 2", 21, "11 Some Street, Some City, Some Country"));
-		personManager.registerPerson(new Member(Data.getNewPersonId(), "Someone 2", 22, "12 Some Street, Some City, Some Country"));
-		personManager.registerPerson(new Member(Data.getNewPersonId(), "Someone 3", 23, "13 Some Street, Some City, Some Country"));
-		personManager.registerPerson(new Member(Data.getNewPersonId(), "Someone 4", 24, "14 Some Street, Some City, Some Country"));
 	}
 	
 	/**
@@ -99,19 +84,16 @@ public class Library {
 	}
 
 	/**
-	 * 
-	 * THE BELOW METHOD STUBS CAN BE USED IF THE PROGRAM REQUIRES INPUT.
-	 * BUT, FOR THE SAKE OF TESTING, THIS IS NOT NEEDED.
-	 * 
-	 */
-	
-	/**
 	 * Adds a new person to the personManager
 	 * @param p, the person object
 	 * @return, if the operation was successful
 	 */
 	public boolean addPerson(Person p) { 
-		return false;
+		if(personManager.addPerson(p) != -1) { 
+			return true;
+		}
+		
+		return true;
 	}
 
 	/**
@@ -119,15 +101,40 @@ public class Library {
 	 * @param id, the person id
 	 * @return, if the operation was successful
 	 */
-	public boolean removePerson(int id) {  
-		return false;
+	public boolean removePerson(int id) {
+		return personManager.removePerson(id);
 	}
+	
+	/**
+	 * Updates a person the personManager
+	 * @param id, id of the person
+	 * @param p, the new person object
+	 * @return, if the operation was successful
+	 */
+	public boolean updatePerson(int id, Person p) {
+		return personManager.updatePerson(id, p);
+	}
+	
+	/**
+	 * Gets a person by their ID number
+	 * @param id, the ID of the person
+	 * @return, the person object itself
+	 * @throws Exception, if no person exists at that ID
+	 */
+	public Person getPerson(int id) throws Exception {
+		return personManager.getPerson(id);
+	}
+	
 	/**
 	 * Adds a new item to the itemList
 	 * @param i, the item object
 	 * @return, if the operation was successful
 	 */
 	public boolean addItem(Item i) { 
+		if(itemManager.addItem(i) != -1) { 
+			return true;
+		}
+		
 		return false;
 	}
 
@@ -136,7 +143,31 @@ public class Library {
 	 * @param id, the item id
 	 * @return, if the operation was successful
 	 */
-	public boolean removeItem(int id) {  
+	public boolean removeItem(int id) { 
+		if(itemManager.removeItem(id)) { 
+			return true;
+		}
+		
 		return false;
+	}
+
+	/**
+	 * Updates a person in the itemManager
+	 * @param id, the id
+	 * @param i, the item itself
+	 * @return, if the operation was successful
+	 */
+	public boolean updateItem(int id, Item i) { 
+		return itemManager.updateItem(id, i);
+	}
+	
+	/**
+	 * 
+	 * @param id, the item ID to find
+	 * @return, the item object itself
+	 * @throws Exception, if no item was found
+	 */
+	public Item getItem(int id) throws Exception {
+		return itemManager.getItem(id);
 	}
 }

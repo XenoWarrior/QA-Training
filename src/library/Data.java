@@ -12,5 +12,10 @@ public class Data {
 	public static int getNewItemId() { 
 		return uniqueItemId++;
 	}
+	
+	public static void resetIncrement() { 
+		uniquePersonId = 0; 
+		uniqueItemId = 0;
+	}
 
 }

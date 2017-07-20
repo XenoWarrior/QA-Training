@@ -16,6 +16,10 @@ public class Person {
 		return "Name/Age: " + personName + ", " + personAge + ". Job: " + personJob;
 	}
 
+	public String toJson() {
+		 return "{ \"name\" : \"" + personName + "\", \"age\": \"" + personAge + "\", \"job\": \"" + personJob + "\"}";
+	}
+	
 	public void setName(String name) {
 		personName = name;
 	}

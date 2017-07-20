@@ -61,6 +61,11 @@ public class ItemManager {
 	 * @return, if the operation was successful
 	 */
 	public boolean removeItem(int id) {
+		if(itemList.containsKey(id)) { 
+			itemList.remove(id);
+			return true;
+		}
+		
 		return false;
 	}
 	
@@ -71,6 +76,12 @@ public class ItemManager {
 	 * @return, if the operation was successful
 	 */
 	public boolean updateItem(int id, Item item) {
+		if(itemList.containsKey(id)) { 
+			itemList.put(id, item);
+			
+			return true;
+		}
+		
 		return false;
 	}
 	

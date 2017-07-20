@@ -14,8 +14,14 @@ public class Member implements Person {
 	
 	private ArrayList<Integer> rentedList = new ArrayList<Integer>();
 	
-	public Member(int personId, String personName, int personAge, String personAddress) { 
-		this.personId = personId;
+	/**
+	 * Constructor
+	 * @param personName, the name for the new person
+	 * @param personAge, the age for the new person
+	 * @param personAddress, the address for the new person
+	 */
+	public Member(String personName, int personAge, String personAddress) { 
+		this.personId = Data.getNewPersonId();
 		this.personName = personName;
 		this.personAge = personAge;
 		this.personAddress = personAddress;

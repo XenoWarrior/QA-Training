@@ -9,14 +9,13 @@ public class Magazine extends Item {
 
 	/**
 	 * Constructor for Magazine which extends Item
-	 * @param itemId, the id for this book
 	 * @param itemName, the name for this book
 	 * @param itemPages, how many pages this book has
 	 * @param itemAvailable, if the item is available
 	 * @param magazineCategory, custom to class, what category the magazine is
 	 */
-	public Magazine(int itemId, String itemName, int itemPages, boolean itemAvailable, String magazineCategory) {
-		super(itemId, itemName, itemPages, itemAvailable);
+	public Magazine(String itemName, int itemPages, boolean itemAvailable, String magazineCategory) {
+		super(Data.getNewItemId(), itemName, itemPages, itemAvailable);
 		this.magazineCategory = magazineCategory;
 	}
 	

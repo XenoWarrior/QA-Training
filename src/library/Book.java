@@ -9,14 +9,13 @@ public class Book extends Item {
 	
 	/**
 	 * Constructor for Book which extends Item
-	 * @param itemId, the id for this book
 	 * @param itemName, the name for this book
 	 * @param itemPages, how many pages this book has
 	 * @param itemAvailable, if the item is available
 	 * @param hardBack, custom to class, if the book is hardback or not
 	 */
-	public Book(int itemId, String itemName, int itemPages, boolean itemAvailable, boolean hardBack) { 
-		super(itemId, itemName, itemPages, itemAvailable);
+	public Book(String itemName, int itemPages, boolean itemAvailable, boolean hardBack) { 
+		super(Data.getNewItemId(), itemName, itemPages, itemAvailable);
 		this.hardBack = hardBack;
 	}
 	
