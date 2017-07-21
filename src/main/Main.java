@@ -29,28 +29,28 @@ public class Main {
 		System.out.println("Running unit test for Person:");
 		System.out.println("--------------------------------------------\nConsole Output (if any):");
 		TestPeople p = new TestPeople();
-		//p.test();
+		p.test();
 		System.out.println("--------------------------------------------");
 		System.out.println(">>>> Success!\n\n");
 
 		System.out.println("Running unit test for Garage:");
 		System.out.print("--------------------------------------------\nConsole Output (if any):\n");
 		TestGarage g = new TestGarage();
-		//g.test();
+		g.test();
 		System.out.println("--------------------------------------------");
 		System.out.println(">>>> Success!\n\n");
 
 		System.out.println("Running unit test for PaintWizard:");
 		System.out.print("--------------------------------------------\nConsole Output (if any):\n");
 		TestPaint w = new TestPaint();
-		//w.test();
+		w.test();
 		System.out.println("--------------------------------------------");
-		System.out.println(">>>> Success!");
+		System.out.println(">>>> Success!\n\n");
 
 		System.out.println("Running unit test for Library:");
 		System.out.print("--------------------------------------------\nConsole Output (if any):\n");
 		TestLibrary tl = new TestLibrary();
-		//tl.test();
+		tl.test();
 		System.out.println("--------------------------------------------");
 		System.out.println(">>>> Success!");
 
