@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -166,6 +167,7 @@ public class ObjectOrientedTasks {
 		// Testing, but it has been called at the end of main in Main.java
 	}
 	
+	@SuppressWarnings("unchecked")
 	public void task19 () {
 
 		System.out.println("\nTask 19 (Person File Writer + Reader):");
@@ -245,13 +247,16 @@ public class ObjectOrientedTasks {
 
 		Library l = new Library();
 
+		SimpleDateFormat d = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+	    Date now = new Date();
+	    
 		// Give library some items
 		l.addItem(new Book("Somebook 1", 11, true, true));
 		l.addItem(new Book("Somebook 2", 12, true, false));
 		l.addItem(new Magazine("SomeMagazine 1", 15, true, "Gossip"));
 		l.addItem(new Magazine("SomeMagazine 2", 16, true, "Cooking"));
-		l.addItem(new Newspaper("SomeMagazine 1", 15, true, new SimpleDateFormat("yyyy/MM/dd HH:mm:ss")));
-		l.addItem(new Newspaper("SomeMagazine 2", 16, true, new SimpleDateFormat("yyyy/MM/dd HH:mm:ss")));
+		l.addItem(new Newspaper("SomeMagazine 1", 15, true, d.format(now)));
+		l.addItem(new Newspaper("SomeMagazine 2", 16, true, d.format(now)));
 
 		// Give library some people
 		l.addPerson(new Member("Someone 1", 20, "10 Some Street, Some City, Some Country"));
@@ -367,8 +372,10 @@ public class ObjectOrientedTasks {
 			System.out.println("[DEBUG]: " + e.getMessage());
 		}
 
-		LibraryIO.WriteObjectJSON(l.getItemList(), "Library_ItemList.json");
-		LibraryIO.WriteObjectJSON(l.getPersonList(), "Library_PeopleList.json");
+		LibraryIO.writeObjectJSON(l.getItemList(), "Library_ItemList.json");
+		LibraryIO.writeObjectJSON(l.getPersonList(), "Library_PeopleList.json");
+		
+		LibraryIO.readObjectJSON("Library_ItemList.json");
 		
 	}
 }

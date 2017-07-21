@@ -29,6 +29,6 @@ public class Book extends Item {
 	
 	@Override
 	public String toString() {
-		return "{ \"name\": \"" + this.itemName + "\", \"pages\": \"" + this.itemPages + "\", \"available\": \"" + this.itemAvailable + "\", \"hardback\": \"" + this.hardBack + "\"}";
+		return "{\"name\": \"" + this.itemName + "\", \"pages\": \"" + this.itemPages + "\", \"available\": \"" + this.itemAvailable + "\", \"hardback\": \"" + this.hardBack + "\"}";
 	}
 }

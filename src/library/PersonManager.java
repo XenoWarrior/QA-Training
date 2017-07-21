@@ -37,6 +37,21 @@ public class PersonManager {
 	}
 
 	/**
+	 * @param personId,
+	 *            the id of the person to delete @return, if the operation was
+	 *            successful
+	 */
+	public boolean removePerson(int personId) {
+		if (personList.containsKey(personId)) {
+			personList.remove(personId);
+
+			return true;
+		}
+
+		return false;
+	}
+
+	/**
 	 * Gets a person by ID
 	 * 
 	 * @param personId,
@@ -53,40 +68,27 @@ public class PersonManager {
 	}
 
 	/**
-	 * @param personId,
-	 *            the id of the person to delete @return, if the operation was
-	 *            successful
-	 */
-	public boolean removePerson(int personId) {
-		if (personList.containsKey(personId)) {
-			personList.remove(personId);
-
-			return true;
-		}
-
-		return false;
-	}
-
-	/**
 	 * Updates a person object based on its Id
 	 * 
 	 * @param personId,
 	 *            the id of the person to delete
 	 * @param p,
-	 *            the Person object itself @return, if the operation was
+	 *            the Person object itself 
+	 * @return, if the operation was*
 	 *            successful
 	 */
 	public boolean updatePerson(int personId, Person p) {
-		if(personList.containsKey(personId)) {
+		if (personList.containsKey(personId)) {
 			personList.put(personId, p);
 			return true;
 		}
-		
+
 		return false;
 	}
 
 	/**
-	 * Gets list of people in the "database" @return, the list of people in the
+	 * Gets list of people in the "database" 
+	 * @return, the list of people in the
 	 * "database"
 	 */
 	public HashMap<Integer, Person> getPersonList() {

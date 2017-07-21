@@ -8,7 +8,7 @@ public class Newspaper extends Item {
 	/**
 	 * Variable definitions for the class
 	 */
-	private SimpleDateFormat releaseDate = null;
+	private String releaseDate = null;
 
 	/**
 	 * Constructor for Newspaper which extends Item
@@ -17,7 +17,7 @@ public class Newspaper extends Item {
 	 * @param itemAvailable, if the item is available
 	 * @param getReleaseDate, custom to class, returns the release date
 	 */
-	public Newspaper(String itemName, int itemPages, boolean itemAvailable, SimpleDateFormat releaseDate) { 
+	public Newspaper(String itemName, int itemPages, boolean itemAvailable, String releaseDate) { 
 		super(Data.getNewItemId(), itemName, itemPages, itemAvailable);
 		this.releaseDate = releaseDate;
 	}
@@ -33,7 +33,7 @@ public class Newspaper extends Item {
 	
 	@Override
 	public String toString() {
-		return "Name: " + this.itemName + ", Pages: " + this.itemPages + ", Available: " + this.itemAvailable + ", ReleaseDate: " + this.releaseDate;
+		return "{\"name\": \"" + this.itemName + "\", \"pages\": \"" + this.itemPages + "\", \"available\": \"" + this.itemAvailable + "\", \"releasedate\": \"" + this.releaseDate + "\"}";
 	}
 	
 }

@@ -17,13 +17,6 @@ public class ItemManager {
 	}
 	
 	/**
-	 * Returns a list of items in the "database"
-	 */
-	public HashMap<Integer, Item> getItemList() { 
-		return itemList;
-	}
-	
-	/**
 	 * Adds an item to the item list
 	 * @param item, the item object to add
 	 * @return, item id is returned
@@ -40,20 +33,6 @@ public class ItemManager {
 		
 		return item.getId();
 	}
-
-	/**
-	 * Gets an item by ID
-	 * @param itemId, the id to find
-	 * @return, the item object
-	 * @throws Exception, if there is no object by the specified id
-	 */
-	public Item getItem(int itemId) throws Exception {
-		if(itemList.containsKey(itemId)) {
-			return itemList.get(itemId);
-		}
-		
-		throw new Exception("Unable to find an item by ID: " + itemId);
-	}
 	
 	/**
 	 * Removes an item by ID
@@ -67,6 +46,20 @@ public class ItemManager {
 		}
 		
 		return false;
+	}
+	
+	/**
+	 * Gets an item by ID
+	 * @param itemId, the id to find
+	 * @return, the item object
+	 * @throws Exception, if there is no object by the specified id
+	 */
+	public Item getItem(int itemId) throws Exception {
+		if(itemList.containsKey(itemId)) {
+			return itemList.get(itemId);
+		}
+		
+		throw new Exception("Unable to find an item by ID: " + itemId);
 	}
 	
 	/**
@@ -98,4 +91,12 @@ public class ItemManager {
 		
 		return false;
 	}
+	
+	/**
+	 * Returns a list of items in the "database"
+	 */
+	public HashMap<Integer, Item> getItemList() { 
+		return itemList;
+	}
+	
 }

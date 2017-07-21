@@ -3,12 +3,15 @@ package tests;
 import static org.junit.Assert.*;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
 
 import org.junit.Test;
 
 import library.Book;
 import library.Data;
 import library.Library;
+import library.LibraryIO;
 import library.Magazine;
 import library.Member;
 import library.Newspaper;
@@ -39,13 +42,16 @@ public class TestLibrary {
 		System.out.println("[TestLibrary]: >>> new Member(\"Someone 2\", 22, \"12 Some Street, Some City, Some Country\")");
 		System.out.println("[TestLibrary]: >>> new Staff(\"Someone 3\", 23, \"13 Some Street, Some City, Some Country\", \"Support\")");
 		System.out.println("[TestLibrary]: >>> new Staff(\"Someone 4\", 24, \"14 Some Street, Some City, Some Country\", \"Sales\")");
-		
+
+		SimpleDateFormat d = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+	    Date now = new Date();
+	    
 		library.addItem(new Book("Somebook 1", 11, true, true)); // 0
 		library.addItem(new Book("Somebook 2", 12, true, false)); // 1
 		library.addItem(new Magazine("SomeMagazine 1", 15, true, "Gossip")); // 2
 		library.addItem(new Magazine("SomeMagazine 2", 16, true, "Cooking")); // 3
-		library.addItem(new Newspaper("SomeNewspaper 1", 15, true, new SimpleDateFormat("yyyy/MM/dd HH:mm:ss"))); // 4
-		library.addItem(new Newspaper("SomeNewspaper 2", 16, true, new SimpleDateFormat("yyyy/MM/dd HH:mm:ss"))); // 5
+		library.addItem(new Newspaper("SomeNewspaper 1", 15, true, d.format(now))); // 4
+		library.addItem(new Newspaper("SomeNewspaper 2", 16, true, d.format(now))); // 5
 		
 		library.addPerson(new Member("Someone 1", 20, "10 Some Street, Some City, Some Country")); // 0
 		library.addPerson(new Member("Someone 2", 21, "11 Some Street, Some City, Some Country")); // 1
@@ -157,6 +163,20 @@ public class TestLibrary {
 			System.out.println(e.getMessage());
 		}
 
+		System.out.print("[TestLibrary]: Checking that input(s) returns the expected value for LibraryIO.writeObjectJson(library.getItemList(), \"JUnitTest_Library_ItemList.json\").\n");
+		if(!LibraryIO.writeObjectJSON(library.getItemList(), "JUnitTest_Library_ItemList.json")) {
+			System.out.println(" fail");
+			fail("LibraryIO.writeObjectJson(library.getItemList(), \"JUnitTest_Library_ItemList.json\") from LibraryIO (static) did not return the expected output: true");
+		}
+		System.out.println(" success");
+		
+		System.out.print("[TestLibrary]: Checking that input(s) returns the expected value for LibraryIO.readObjectJson(\"JUnitTest_Library_ItemList.json\").\n");
+		if(!(LibraryIO.readObjectJSON("JUnitTest_Library_ItemList.json") instanceof HashMap<?, ?>)) {
+			System.out.println(" fail");
+			fail("LibraryIO.readObjectJSON(\"JUnitTest_Library_ItemList.json\") from LibraryIO (static) did not return the expected output: HashMap<String, String>");
+		}
+		System.out.println(" success");
+		
 		return;
 		
 	}
