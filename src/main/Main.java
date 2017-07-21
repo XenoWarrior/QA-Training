@@ -1,7 +1,7 @@
 package main;
 
 
-import tests.*;
+import java.util.ArrayList;
 
 /**
  * Beginner tasks for QA Training
@@ -15,46 +15,17 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 
-		BeginnerTasks beginnerTasks = new BeginnerTasks();
-		beginnerTasks.runTasks();
+		ArrayList<Task> taskList = new ArrayList<Task>();
 
-		IntermediateTasks intermediateTasks = new IntermediateTasks();
-		intermediateTasks.runTasks();
-
-		ObjectOrientedTasks oopTasks = new ObjectOrientedTasks();
-		oopTasks.runTasks();
-
-		System.out.println("\n\n----- RUNNING JUNIT TESTS -----");
-
-		System.out.println("Running unit test for Person:");
-		System.out.println("--------------------------------------------\nConsole Output (if any):");
-		TestPeople p = new TestPeople();
-		p.test();
-		System.out.println("--------------------------------------------");
-		System.out.println(">>>> Success!\n\n");
-
-		System.out.println("Running unit test for Garage:");
-		System.out.print("--------------------------------------------\nConsole Output (if any):\n");
-		TestGarage g = new TestGarage();
-		g.test();
-		System.out.println("--------------------------------------------");
-		System.out.println(">>>> Success!\n\n");
-
-		System.out.println("Running unit test for PaintWizard:");
-		System.out.print("--------------------------------------------\nConsole Output (if any):\n");
-		TestPaint w = new TestPaint();
-		w.test();
-		System.out.println("--------------------------------------------");
-		System.out.println(">>>> Success!\n\n");
-
-		System.out.println("Running unit test for Library:");
-		System.out.print("--------------------------------------------\nConsole Output (if any):\n");
-		TestLibrary tl = new TestLibrary();
-		tl.test();
-		System.out.println("--------------------------------------------");
-		System.out.println(">>>> Success!");
-
-		System.out.println("\n\n----- ALL TESTS PASSED! -----");
+		//taskList.add(new BeginnerTasks());
+		//taskList.add(new IntermediateTasks());
+		//taskList.add(new ObjectOrientedTasks());
+		taskList.add(new AdvancedTasks());
+		//taskList.add(new TestTasks());
+		
+		for(Task t : taskList) {
+			t.runTasks();
+		}
 		
 	}
 

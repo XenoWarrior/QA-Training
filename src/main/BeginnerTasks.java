@@ -2,7 +2,7 @@ package main;
 
 import java.util.Random;
 
-public class BeginnerTasks {
+public class BeginnerTasks implements Task {
 
 	/**
 	 * Main method for this object, for the basic tasks in the QA Exercise book.

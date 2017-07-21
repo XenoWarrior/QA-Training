@@ -16,7 +16,7 @@ import org.json.simple.JSONValue;
 import garage.*;
 import library.*;
 
-public class ObjectOrientedTasks {
+public class ObjectOrientedTasks implements Task {
 
 	Garage vehicleGarage = new Garage();
 	
@@ -27,7 +27,7 @@ public class ObjectOrientedTasks {
 		task15();
 		task16();
 		task17();
-		//task18(); is now run in MAIN
+		//task18(); is now run in TestTasks.java
 		task19();
 		task20();
 		
@@ -164,7 +164,7 @@ public class ObjectOrientedTasks {
 	}
 	
 	public void task18 () {
-		// Testing, but it has been called at the end of main in Main.java
+		// Testing, but it has now been moved to TestTasks.java
 	}
 	
 	@SuppressWarnings("unchecked")

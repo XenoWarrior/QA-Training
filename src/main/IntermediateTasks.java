@@ -3,7 +3,7 @@ package main;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class IntermediateTasks {
+public class IntermediateTasks implements Task {
 
 	/**
 	 * Runs the tasks from the intermediate section
