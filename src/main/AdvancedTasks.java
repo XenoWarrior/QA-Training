@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Set;
 
 public class AdvancedTasks implements Task {
 
@@ -63,22 +64,20 @@ public class AdvancedTasks implements Task {
 	}
 
 	private void task21() {
+
 		ArrayList<String> wordList = readFile("WordList.txt");
 		HashMap<String, String> anagramList = new HashMap<String, String>();
 		HashMap<String, Integer> anagramCount = new HashMap<String, Integer>();
 
-		System.out.println("[AdvancedTasks]: WordList: " + wordList);
+		//System.out.println("[AdvancedTasks]: WordList: " + wordList);
 
 		for (String w : wordList) {
-			System.out.print("[AdvancedTasks]: Sort: " + w + " => ");
-			System.out.println(sortStringAlphabetically(w));
-		}
-
-		for (String w : wordList) {
+			//System.out.print("[AdvancedTasks]: Sort: " + w + " => ");
+			//System.out.println(sortStringAlphabetically(w));
 			anagramList.put(w, sortStringAlphabetically(w));
 		}
 
-		System.out.println(anagramList);
+		//System.out.println(anagramList);
 
 		for (String a : anagramList.values()) {
 			if (anagramCount.containsKey(a)) {
@@ -88,14 +87,26 @@ public class AdvancedTasks implements Task {
 			}
 		}
 
-		System.out.println(anagramCount);
-		System.out.print("[AdvancedTasks]: The word with most anagrams has " + Collections.max(anagramCount.values()) + " matches, the word is: ");
+		//System.out.println(anagramCount);
+		System.out.print("[AdvancedTasks]: The word(s) with most anagrams has " + Collections.max(anagramCount.values()) + " matches, the value is: ");
 
+		
+		String result = "";
 		for (Object o : anagramCount.keySet()) {
 			if (anagramCount.get(o).equals(Collections.max(anagramCount.values()))) {
-				System.out.println(o);
+				System.out.println("[" + o + "]");
+				result = (String)o;
 			}
 		}
+		
+		//System.out.print("[AdvancedTasks]: The words matching this anagram are: ");
+		
+		//for(String w : wordList) { 
+		//	if(result.equals(sortStringAlphabetically(w))) { 
+		//		System.out.print("[" + w + "]");
+		//	}
+		//}
+		//System.out.println();
 
 	}
 
