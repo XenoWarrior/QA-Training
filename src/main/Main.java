@@ -17,11 +17,11 @@ public class Main {
 
 		ArrayList<Task> taskList = new ArrayList<Task>();
 
-		//taskList.add(new BeginnerTasks());
-		//taskList.add(new IntermediateTasks());
-		//taskList.add(new ObjectOrientedTasks());
+		taskList.add(new BeginnerTasks());
+		taskList.add(new IntermediateTasks());
+		taskList.add(new ObjectOrientedTasks());
 		taskList.add(new AdvancedTasks());
-		//taskList.add(new TestTasks());
+		taskList.add(new TestTasks());
 		
 		for(Task t : taskList) {
 			t.runTasks();

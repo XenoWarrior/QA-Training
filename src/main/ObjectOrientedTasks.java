@@ -24,12 +24,12 @@ public class ObjectOrientedTasks implements Task {
 
 		System.out.println("\n\n----- START OF OOP TASKS -----");
 
-		task15();
-		task16();
-		task17();
+		task15(); // People List
+		task16(); // Garage Task
+		task17(); // Paint Wizard
 		//task18(); is now run in TestTasks.java
-		task19();
-		task20();
+		task19(); // Person File Reader + Writer
+		task20(); // Library System
 		
 		System.out.println("----- END OF OOP TASKS -----");
 

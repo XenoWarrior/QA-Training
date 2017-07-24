@@ -19,6 +19,7 @@ public class PaintWizard {
 	 * @throws Exception 
 	 */
 	public Paint wastesLeast(double size) throws Exception {
+				
 		System.out.println("\n[PaintWizard]: Deciding on best paint for the room size: " + size + "M²");
 		
 		double leastWastedPaint = -1;
